@@ -1,0 +1,22 @@
+<view class="page template-page">
+  <view class="section-card intro-card">
+    <view class="theme-title">日报卡模板</view>
+    <view class="theme-subtitle">这里展示最终日报卡的排版样式。整套页面视觉请前往「主题皮肤中心」设置。</view>
+    <view class="primary-btn theme-link" bindtap="goThemeCenter">进入主题皮肤中心</view>
+  </view>
+
+  <view class="template-list">
+    <view class="section-card template-item" wx:for="{{cardTemplates}}" wx:key="id">
+      <view class="preview-strip">
+        <view class="preview-color" style="background: {{item.previewColorA}};"></view>
+        <view class="preview-color" style="background: {{item.previewColorB}};"></view>
+        <view class="preview-color" style="background: {{item.previewColorC}};"></view>
+      </view>
+      <view class="template-row">
+        <view class="template-name">{{item.name}}</view>
+        <view class="template-level">{{item.level}}</view>
+      </view>
+      <view class="theme-subtitle">{{item.scene}}｜{{item.desc}}</view>
+    </view>
+  </view>
+</view>

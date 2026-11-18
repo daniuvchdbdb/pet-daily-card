@@ -1,0 +1,202 @@
+.membership-page {
+  padding-bottom: 160rpx;
+}
+
+.service-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 260rpx;
+  background:
+    radial-gradient(circle at 86% 18%, rgba(255, 111, 163, 0.18), transparent 150rpx),
+    linear-gradient(135deg, #fffdf8, #fff5f8);
+}
+
+.service-hero::after {
+  content: "";
+  position: absolute;
+  right: 34rpx;
+  bottom: 24rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 191, 102, 0.28), transparent 70%);
+}
+
+.service-kicker,
+.duration-pill {
+  display: inline-flex;
+  padding: 8rpx 18rpx;
+  border-radius: 999rpx;
+  color: #d98217;
+  background: rgba(255, 187, 88, 0.16);
+  font-size: 23rpx;
+  font-weight: 850;
+}
+
+.service-title {
+  margin-top: 22rpx;
+  color: var(--theme-text, #3a2a30);
+  font-size: 40rpx;
+  font-weight: 950;
+}
+
+.service-desc,
+.service-expire,
+.plan-subtitle,
+.note-item,
+.after-sale {
+  color: var(--theme-subtle, rgba(58, 42, 48, 0.58));
+  font-size: 25rpx;
+  line-height: 1.55;
+}
+
+.service-desc {
+  margin-top: 14rpx;
+  max-width: 560rpx;
+}
+
+.service-expire {
+  margin-top: 18rpx;
+}
+
+.creator-banner {
+  margin-top: 22rpx;
+  padding: 18rpx 20rpx;
+  border-radius: 24rpx;
+  color: #ad7417;
+  background: rgba(246, 198, 91, 0.18);
+  font-size: 24rpx;
+  line-height: 1.45;
+}
+
+.plans {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.free-card,
+.product-card {
+  border: 2rpx solid rgba(255, 111, 163, 0.12);
+}
+
+.product-card.active {
+  border-color: rgba(255, 111, 163, 0.42);
+  box-shadow: 0 18rpx 44rpx rgba(255, 111, 163, 0.16);
+}
+
+.product-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 22rpx;
+}
+
+.plan-name {
+  color: var(--theme-text, #3a2a30);
+  font-size: 32rpx;
+  font-weight: 950;
+}
+
+.plan-price {
+  color: var(--theme-primary-solid, #ff6fa3);
+  font-size: 40rpx;
+  font-weight: 950;
+  white-space: nowrap;
+}
+
+.duration-pill {
+  margin-top: 18rpx;
+}
+
+.feature-grid {
+  margin-top: 20rpx;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14rpx 18rpx;
+}
+
+.feature {
+  margin-top: 14rpx;
+  color: var(--theme-text, #3a2a30);
+  font-size: 24rpx;
+  line-height: 1.45;
+}
+
+.buy-btn {
+  margin-top: 26rpx;
+}
+
+.compliance-card {
+  margin-top: 32rpx;
+}
+
+.note-item {
+  margin-top: 12rpx;
+}
+
+.contact-btn {
+  margin-top: 24rpx;
+  height: 72rpx;
+  border-radius: 999rpx;
+  color: var(--theme-primary-solid, #ff6fa3);
+  background: rgba(255, 111, 163, 0.10);
+  font-size: 26rpx;
+  border: 0;
+}
+
+.contact-btn::after {
+  border: 0;
+}
+
+.after-sale {
+  margin-top: 16rpx;
+}
+
+.agreement-row {
+  margin: 28rpx 4rpx 0;
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  color: var(--theme-subtle, rgba(58, 42, 48, 0.62));
+  font-size: 24rpx;
+}
+
+.agreement-row .link {
+  color: var(--theme-primary-solid, #ff6fa3);
+  font-weight: 850;
+}
+
+.theme-realm-gold .service-hero,
+.theme-tianming-god .service-hero,
+.theme-realm-gold .free-card,
+.theme-realm-gold .product-card,
+.theme-realm-gold .compliance-card,
+.theme-tianming-god .free-card,
+.theme-tianming-god .product-card,
+.theme-tianming-god .compliance-card {
+  background: rgba(246, 198, 91, 0.08);
+  border-color: rgba(246, 198, 91, 0.26);
+}
+
+.theme-realm-gold .plan-name,
+.theme-realm-gold .service-title,
+.theme-tianming-god .plan-name,
+.theme-tianming-god .service-title {
+  color: #fff8dc;
+}
+
+.theme-realm-gold .service-desc,
+.theme-realm-gold .service-expire,
+.theme-realm-gold .plan-subtitle,
+.theme-realm-gold .note-item,
+.theme-realm-gold .after-sale,
+.theme-realm-gold .agreement-row,
+.theme-tianming-god .service-desc,
+.theme-tianming-god .service-expire,
+.theme-tianming-god .plan-subtitle,
+.theme-tianming-god .note-item,
+.theme-tianming-god .after-sale,
+.theme-tianming-god .agreement-row {
+  color: rgba(255, 248, 220, 0.72);
+}

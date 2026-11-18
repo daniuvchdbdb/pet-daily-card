@@ -1,0 +1,101 @@
+<view class="page reminders-page {{themeClass}} reminders-{{themeInfo.layoutType}}" style="{{customThemeStyle}}">
+  <view class="page-header">
+    <view>
+      <view class="page-title">养护提醒</view>
+      <view class="page-subtitle">提醒都由你主动创建和开启，微信服务通知也必须主动授权。</view>
+    </view>
+  </view>
+
+  <view class="section-card reminder-hero theme-deco reminder-{{themeInfo.reminderCardVariant}}">
+    <view class="calendar-icon">📅</view>
+    <view class="summary-copy">
+      <view class="summary-title">今日提醒</view>
+      <view class="summary-count">{{summary.todayCount}} 条</view>
+      <view class="summary-sub">已开启 {{summary.enabledCount}} 条</view>
+    </view>
+    <image class="hero-dog" src="/assets/stickers/paw-pink.png"></image>
+  </view>
+
+  <view class="primary-btn page-main-action" bindtap="addReminder">＋ 新增提醒</view>
+
+  <view class="form-card filter-card">
+    <view class="form-label">按宠物筛选</view>
+    <picker range="{{petFilterOptions}}" range-key="name" value="{{petFilterIndex}}" bindchange="pickPetFilter">
+      <view class="form-value">{{petFilterOptions[petFilterIndex].name}}</view>
+    </picker>
+  </view>
+
+  <view class="section">
+    <view class="section-header">
+      <view class="section-title">今日提醒</view>
+      <view class="section-more" bindtap="addReminder">新增</view>
+    </view>
+
+    <view class="reminder-list" wx:if="{{todayReminders.length}}">
+      <view class="reminder-card section-card reminder-{{themeInfo.reminderCardVariant}} theme-deco" wx:for="{{todayReminders}}" wx:key="_id">
+        <view class="reminder-top">
+          <view class="type-icon">{{item.typeIcon}}</view>
+          <view class="reminder-main">
+            <view class="reminder-title">{{item.title}}</view>
+            <view class="reminder-meta">{{item.petName || '未选择宠物'}} · {{item.timeText}} · {{item.repeatLabel}}</view>
+          </view>
+          <switch checked="{{item.enabled}}" data-id="{{item._id}}" bindchange="toggleEnabled"></switch>
+        </view>
+        <view class="reminder-status">
+          <view class="status-tag {{item.statusClass}}">{{item.statusText}}</view>
+          <view class="next-run">下次：{{item.nextRunText}}</view>
+        </view>
+        <view class="health-tip" wx:if="{{item.healthTip}}">{{item.healthTip}}</view>
+        <view class="card-actions">
+          <view class="secondary-btn mini-btn" data-id="{{item._id}}" bindtap="editReminder">编辑</view>
+          <view class="primary-btn mini-btn" data-id="{{item._id}}" bindtap="completeReminder">完成</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="empty-state section-card" wx:else>
+      <view class="empty-icon">🔔</view>
+      <view class="empty-text">今天还没有提醒</view>
+      <view class="empty-subtext">毛孩子的小日程很清爽</view>
+      <view class="primary-btn empty-action" bindtap="addReminder">新增提醒</view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-header">
+      <view class="section-title">全部提醒</view>
+      <view class="section-more">{{allReminders.length}} 条</view>
+    </view>
+
+    <view class="reminder-list" wx:if="{{allReminders.length}}">
+      <view class="reminder-card section-card reminder-{{themeInfo.reminderCardVariant}} theme-deco" wx:for="{{allReminders}}" wx:key="_id">
+        <view class="reminder-top">
+          <view class="type-icon">{{item.typeIcon}}</view>
+          <view class="reminder-main">
+            <view class="reminder-title">{{item.title}}</view>
+            <view class="reminder-meta">{{item.petName || '未选择宠物'}} · {{item.typeLabel}} · {{item.timeText}}</view>
+          </view>
+          <switch checked="{{item.enabled}}" data-id="{{item._id}}" bindchange="toggleEnabled"></switch>
+        </view>
+        <view class="reminder-status">
+          <view class="status-tag {{item.statusClass}}">{{item.statusText}}</view>
+          <view class="next-run">下次：{{item.nextRunText}}</view>
+        </view>
+        <view class="health-tip" wx:if="{{item.healthTip}}">{{item.healthTip}}</view>
+        <view class="card-actions">
+          <view class="secondary-btn mini-btn" data-id="{{item._id}}" bindtap="editReminder">编辑</view>
+          <view class="primary-btn mini-btn" data-id="{{item._id}}" bindtap="completeReminder">完成</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="empty-state section-card" wx:else>
+      <view class="empty-icon">日</view>
+      <view class="empty-text">还没有养护提醒</view>
+      <view class="empty-subtext">创建喂饭、喝水、洗澡等提醒，让日常照顾更从容。</view>
+      <view class="primary-btn empty-action" bindtap="addReminder">新增提醒</view>
+    </view>
+  </view>
+
+  <view class="safe-note">本小程序仅用于宠物日常记录和养护提醒，不提供医疗诊断或治疗建议。</view>
+</view>

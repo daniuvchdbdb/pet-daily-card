@@ -1,0 +1,99 @@
+<view class="page reminder-edit-page {{themeClass}}" style="{{customThemeStyle}}">
+  <view class="page-header">
+    <view class="page-title">{{pageTitle}}</view>
+    <view class="page-subtitle">所有提醒都由你主动创建和开启，微信服务通知也必须主动授权。</view>
+  </view>
+
+  <view class="form-card">
+    <view class="section-title">基础信息</view>
+    <view class="form-item">
+      <view class="form-label">选择宠物</view>
+      <picker range="{{pets}}" range-key="name" value="{{petIndex}}" bindchange="pickPet">
+        <view class="form-value">{{selectedPet.name || '请选择宠物'}}</view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <view class="form-label">提醒类型</view>
+      <picker range="{{reminderTypes}}" range-key="label" value="{{typeIndex}}" bindchange="pickType">
+        <view class="form-value">{{reminderTypes[typeIndex].label}}</view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <view class="form-label">提醒标题</view>
+      <input value="{{form.title}}" data-key="title" bindinput="input" placeholder="例如 晚饭时间" />
+    </view>
+  </view>
+
+  <view class="form-card">
+    <view class="section-title">时间和周期</view>
+    <view class="form-item">
+      <view class="form-label">提醒时间</view>
+      <picker mode="time" value="{{form.remindTime}}" bindchange="pickTime">
+        <view class="form-value">{{form.remindTime}}</view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <view class="form-label">重复周期</view>
+      <picker range="{{repeatTypes}}" range-key="label" value="{{repeatIndex}}" bindchange="pickRepeat">
+        <view class="form-value">{{repeatTypes[repeatIndex].label}}</view>
+      </picker>
+    </view>
+
+    <view class="form-item" wx:if="{{form.repeatType === 'every_n_days'}}">
+      <view class="form-label">每 N 天</view>
+      <input type="number" value="{{form.intervalDays}}" data-key="intervalDays" bindinput="input" />
+    </view>
+
+    <view class="form-item" wx:if="{{form.repeatType === 'weekly'}}">
+      <view class="form-label">选择星期</view>
+      <view class="tag-row weekday-row">
+        <view class="status-tag {{item.selected ? 'active' : ''}}" wx:for="{{weekdayItems}}" wx:key="value" data-value="{{item.value}}" bindtap="toggleWeekday">{{item.label}}</view>
+      </view>
+    </view>
+
+    <view class="form-item">
+      <view class="form-label">开始日期</view>
+      <picker mode="date" value="{{form.remindDate}}" bindchange="pickDate">
+        <view class="form-value">{{form.remindDate}}</view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="form-card">
+    <view class="section-title">提醒设置</view>
+    <view class="form-item switch-item">
+      <view>
+        <view class="form-label">开启提醒</view>
+        <view class="form-tip">关闭后不会出现在待提醒队列中。</view>
+      </view>
+      <switch checked="{{form.enabled}}" bindchange="toggleEnabled"></switch>
+    </view>
+
+    <view class="form-item switch-item">
+      <view>
+        <view class="form-label">微信服务通知</view>
+        <view class="form-tip">必须由你主动授权，到点才可能收到微信提醒。</view>
+      </view>
+      <switch checked="{{form.subscribeEnabled}}" bindchange="toggleSubscribe"></switch>
+    </view>
+
+    <view class="form-item">
+      <view class="form-label">备注</view>
+      <textarea value="{{form.note}}" data-key="note" bindinput="input" placeholder="例如 饭后观察喝水情况" />
+    </view>
+  </view>
+
+  <view class="safe-note" wx:if="{{healthTip}}">{{healthTip}}</view>
+  <view class="primary-btn save-btn" bindtap="save">保存提醒</view>
+
+  <view class="danger-zone section-card" wx:if="{{id}}">
+    <view>
+      <view class="danger-title">删除提醒</view>
+      <view class="form-tip">删除后不会影响已经保存的日报记录。</view>
+    </view>
+    <view class="danger-btn delete-btn" bindtap="deleteReminder">删除</view>
+  </view>
+</view>

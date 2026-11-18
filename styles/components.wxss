@@ -1,0 +1,195 @@
+.section-card,
+.form-card,
+.pet-card,
+.reminder-card,
+.theme-card,
+.member-card,
+.preview-card,
+.quick-card,
+.empty-state,
+.card {
+  position: relative;
+  overflow: hidden;
+  padding: 28rpx;
+  border-radius: var(--theme-radius, 32rpx);
+  background: var(--theme-card, #ffffff);
+  border: 1rpx solid var(--theme-border, rgba(255, 111, 143, 0.16));
+  box-shadow: var(--theme-shadow, 0 14rpx 36rpx rgba(255, 111, 143, 0.10));
+  box-sizing: border-box;
+  color: var(--theme-text, #3a2a2a);
+}
+
+.primary-btn,
+.btn {
+  min-height: 92rpx;
+  padding: 0 32rpx;
+  border-radius: 999rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  color: #ffffff;
+  background: var(--theme-primary, linear-gradient(135deg, #ff8fa8 0%, #ff5f83 100%));
+  box-shadow: var(--theme-btn-shadow, 0 12rpx 26rpx rgba(255, 111, 143, 0.28));
+  font-size: 30rpx;
+  font-weight: 900;
+}
+
+.secondary-btn,
+.btn.secondary {
+  min-height: 64rpx;
+  padding: 0 26rpx;
+  border-radius: 999rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  color: var(--theme-primary-solid, #ff6f8f);
+  background: var(--theme-soft, #fff0f5);
+  border: 1rpx solid var(--theme-border, rgba(255, 111, 143, 0.16));
+  font-size: 26rpx;
+  font-weight: 800;
+}
+
+.ghost-btn,
+.btn.ghost {
+  min-height: 56rpx;
+  padding: 0 22rpx;
+  border-radius: 999rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--theme-subtle, #8a7772);
+  background: transparent;
+  border: 1rpx solid transparent;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+.danger-btn,
+.btn.danger {
+  min-height: 56rpx;
+  padding: 0 22rpx;
+  border-radius: 999rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c85b47;
+  background: rgba(255, 240, 237, 0.92);
+  border: 1rpx solid rgba(200, 91, 71, 0.14);
+  box-shadow: none;
+}
+
+.status-tag,
+.tag {
+  min-height: 52rpx;
+  padding: 0 24rpx;
+  border-radius: 999rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  color: var(--theme-primary-text, #b65a70);
+  background: var(--theme-soft, #fff0f5);
+  border: 1rpx solid var(--theme-border, rgba(255, 111, 143, 0.16));
+  font-size: 24rpx;
+  font-weight: 700;
+}
+
+.status-tag.active,
+.tag.active {
+  color: #ffffff;
+  background: var(--theme-primary, linear-gradient(135deg, #ff8fa8, #ff5f83));
+  box-shadow: 0 8rpx 18rpx rgba(255, 111, 143, 0.22);
+}
+
+.form-item,
+.field {
+  margin-top: 24rpx;
+}
+
+.form-label,
+.label {
+  margin-bottom: 12rpx;
+  color: var(--theme-text, #3a2a2a);
+  font-size: 26rpx;
+  font-weight: 850;
+}
+
+.form-value {
+  min-height: 84rpx;
+  display: flex;
+  align-items: center;
+  color: var(--theme-text, #3a2a2a);
+}
+
+.form-tip {
+  margin-top: 8rpx;
+  color: var(--theme-subtle, #8a7772);
+  font-size: 23rpx;
+  line-height: 1.45;
+}
+
+input,
+textarea,
+picker {
+  width: 100%;
+  min-height: 84rpx;
+  padding: 20rpx 24rpx;
+  border-radius: 24rpx;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1rpx solid var(--theme-border, rgba(255, 111, 143, 0.16));
+  box-sizing: border-box;
+  color: var(--theme-text, #3a2a2a);
+}
+
+textarea {
+  min-height: 170rpx;
+}
+
+.empty-state {
+  min-height: 250rpx;
+  padding: 48rpx 28rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14rpx;
+  text-align: center;
+}
+
+.empty-icon {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 34rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--theme-primary-solid, #ff6f8f);
+  background: var(--theme-soft, #fff0f5);
+  font-size: 42rpx;
+  font-weight: 900;
+}
+
+.empty-text {
+  color: var(--theme-text, #3a2a2a);
+  font-size: 30rpx;
+  font-weight: 900;
+}
+
+.empty-subtext {
+  color: var(--theme-subtle, #8a7772);
+  font-size: 24rpx;
+  line-height: 1.45;
+}
+
+.safe-note {
+  margin-top: 32rpx;
+  padding: 22rpx 24rpx;
+  border-radius: 26rpx;
+  color: var(--theme-subtle, #8a7772);
+  background: rgba(255, 255, 255, 0.62);
+  border: 1rpx solid var(--theme-border, rgba(255, 111, 143, 0.12));
+  font-size: 23rpx;
+  line-height: 1.6;
+}

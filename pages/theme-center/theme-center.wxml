@@ -1,0 +1,121 @@
+<view class="page theme-center-page {{themeClass}}" style="{{customThemeStyle}}">
+  <view class="page-header">
+    <view class="page-title">主题皮肤中心</view>
+    <view class="page-subtitle">选择整套页面风格，日报卡也会保留对应主题效果。</view>
+  </view>
+
+  <view class="section-card current-theme-card theme-deco">
+    <view class="current-badge">当前使用</view>
+    <view class="current-content">
+      <view>
+        <view class="current-name">{{currentThemeName}}</view>
+        <view class="current-desc">{{currentThemeDesc}}</view>
+        <view class="level-pill">{{currentThemeLevel}}</view>
+      </view>
+      <image class="current-pet" src="/assets/stickers/paw-pink.png"></image>
+    </view>
+    <view class="creator-banner" wx:if="{{creatorMode}}">创作者模式已开启：你可以使用全部主题进行测试和展示。</view>
+  </view>
+
+  <view class="section">
+    <view class="section-header">
+      <view class="section-title">精选主题</view>
+      <view class="section-more">可预览</view>
+    </view>
+
+    <view class="theme-grid">
+      <view class="theme-card section-card {{item.pageClass}} {{item.isCurrent ? 'active' : ''}}" wx:for="{{featuredThemes}}" wx:key="id">
+        <view class="theme-preview mini-preview mini-{{item.heroVariant}}">
+          <view class="theme-level {{item.level}}">{{item.levelText}}</view>
+          <view class="lock-mask" wx:if="{{item.lockVisible}}">
+            <view class="lock-icon">锁</view>
+            <view class="lock-text">全部免费可用</view>
+          </view>
+          <view wx:if="{{item.heroVariant == 'warm_photo'}}" class="mini-warm">
+            <view class="mini-title">毛孩日报</view>
+            <view class="mini-photo"></view>
+            <view class="mini-button"></view>
+          </view>
+          <view wx:elif="{{item.heroVariant == 'xhs_sticker'}}" class="mini-xhs">
+            <view class="mini-heart">♥</view>
+            <view class="mini-title">甜宠小记</view>
+            <view class="mini-photo"></view>
+            <view class="mini-stickers">
+              <text>爱心</text><text>贴纸</text>
+            </view>
+          </view>
+          <view wx:elif="{{item.heroVariant == 'diary_cover'}}" class="mini-diary">
+            <view class="mini-tape">手账</view>
+            <view class="mini-polaroid"></view>
+            <view class="mini-lines"></view>
+          </view>
+          <view wx:elif="{{item.heroVariant == 'realm_panel'}}" class="mini-realm">
+            <view class="mini-rune"></view>
+            <view class="mini-title">灵宠修行</view>
+            <view class="mini-bar"></view>
+          </view>
+          <view wx:else class="mini-god">
+            <view class="mini-crown">♛</view>
+            <view class="mini-title">天命毛神</view>
+            <view class="mini-halo"></view>
+          </view>
+        </view>
+        <view class="theme-name">{{item.name}}</view>
+        <view class="theme-scene">{{item.scene}}</view>
+        <view class="theme-desc">{{item.sellingPoint}}</view>
+        <view class="theme-actions">
+          <view class="secondary-btn mini-btn" data-id="{{item.id}}" bindtap="previewTheme">预览</view>
+          <view class="primary-btn mini-btn" data-id="{{item.id}}" bindtap="useTheme">{{item.actionText}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section-card custom-editor">
+    <view class="section-title">自定义主题</view>
+    <view class="page-subtitle">自定义主题已免费开放，可直接保存并应用。</view>
+
+    <view class="form-item">
+      <view class="form-label">主题名称</view>
+      <input value="{{customTheme.name}}" bindinput="inputCustomName" placeholder="我的主题" />
+    </view>
+
+    <view class="form-label">背景色</view>
+    <view class="swatch-row">
+      <view class="swatch {{customTheme.backgroundColor === item ? 'active' : ''}}" wx:for="{{bgColors}}" wx:key="*this" style="background: {{item}};" data-key="backgroundColor" data-value="{{item}}" bindtap="chooseColor"></view>
+    </view>
+
+    <view class="form-label">卡片色</view>
+    <view class="swatch-row">
+      <view class="swatch {{customTheme.cardColor === item ? 'active' : ''}}" wx:for="{{cardColors}}" wx:key="*this" style="background: {{item}};" data-key="cardColor" data-value="{{item}}" bindtap="chooseColor"></view>
+    </view>
+
+    <view class="form-label">主题色</view>
+    <view class="swatch-row">
+      <view class="swatch {{customTheme.primaryColor === item ? 'active' : ''}}" wx:for="{{primaryColors}}" wx:key="*this" style="background: {{item}};" data-key="primaryColor" data-value="{{item}}" bindtap="chooseColor"></view>
+    </view>
+
+    <view class="form-label">圆角大小</view>
+    <view class="tag-row">
+      <view class="status-tag {{customTheme.radius === item ? 'active' : ''}}" wx:for="{{radiusOptions}}" wx:key="*this" data-value="{{item}}" bindtap="chooseRadius">{{item}}rpx</view>
+    </view>
+
+    <view class="form-label">图标风格</view>
+    <view class="tag-row">
+      <view class="status-tag {{customTheme.decorationStyle === item.value ? 'active' : ''}}" wx:for="{{decorationOptions}}" wx:key="value" data-key="decorationStyle" data-value="{{item.value}}" bindtap="chooseOption">{{item.label}}</view>
+    </view>
+
+    <view class="form-label">按钮风格</view>
+    <view class="tag-row">
+      <view class="status-tag {{customTheme.buttonStyle === item.value ? 'active' : ''}}" wx:for="{{buttonOptions}}" wx:key="value" data-key="buttonStyle" data-value="{{item.value}}" bindtap="chooseOption">{{item.label}}</view>
+    </view>
+
+    <view class="preview-card custom-preview">
+      <view class="section-title">{{customTheme.name}}</view>
+      <view class="page-subtitle">实时预览卡片、按钮和标签效果</view>
+      <view class="status-tag active">今日心情：开心</view>
+    </view>
+
+    <view class="primary-btn save-custom" bindtap="saveCustomTheme">保存并应用自定义主题</view>
+  </view>
+</view>

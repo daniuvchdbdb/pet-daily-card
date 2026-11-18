@@ -1,0 +1,21 @@
+<view class="page membership-page {{themeClass}}" style="{{customThemeStyle}}">
+  <view class="page-header">
+    <view class="page-title">全部功能已免费开放</view>
+    <view class="page-subtitle">会员系统已移除，主题、模板、无水印保存和自定义能力都可以直接使用。</view>
+  </view>
+
+  <view class="section-card service-hero">
+    <view class="service-kicker">当前版本：{{planName}}</view>
+    <view class="service-title">无需付费，直接记录</view>
+    <view class="service-desc">毛孩日报现在不再区分任何付费等级，所有权益默认可用。</view>
+    <view class="service-expire">有效期：{{expireText}}</view>
+  </view>
+
+  <view class="section-card compliance-card">
+    <view class="section-title">已开放功能</view>
+    <view class="note-item" wx:for="{{freeFeatures}}" wx:key="*this">• {{item}}</view>
+    <view class="primary-btn buy-btn" bindtap="goThemeCenter">去选择主题</view>
+  </view>
+
+  <view class="safe-note">本小程序仅用于宠物日常记录和养护提醒，不提供医疗诊断或治疗建议。</view>
+</view>

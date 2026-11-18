@@ -1,0 +1,360 @@
+.create-page {
+  padding-bottom: 180rpx;
+}
+
+.page-header {
+  margin-bottom: 32rpx;
+}
+
+.create-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 30rpx;
+  border-radius: 34rpx;
+  background: var(--theme-card, rgba(255, 255, 255, 0.86));
+  border: 2rpx solid var(--theme-border, rgba(255, 177, 92, 0.22));
+  box-shadow: var(--theme-shadow, 0 16rpx 34rpx rgba(176, 102, 45, 0.10));
+}
+
+.create-kicker {
+  display: inline-flex;
+  margin-bottom: 14rpx;
+  padding: 8rpx 18rpx;
+  border-radius: 999rpx;
+  color: var(--theme-primary-solid, #ff944d);
+  background: var(--theme-soft, #fff0d6);
+  font-size: 22rpx;
+  font-weight: 900;
+}
+
+.page-title {
+  color: var(--theme-text, #3a2a30);
+  font-size: 42rpx;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.page-subtitle {
+  margin-top: 10rpx;
+  color: var(--theme-subtle, rgba(58, 42, 48, 0.58));
+  font-size: 24rpx;
+  line-height: 1.45;
+}
+
+.create-step-row {
+  display: flex;
+  gap: 12rpx;
+  margin-top: 24rpx;
+}
+
+.create-step {
+  flex: 1;
+  height: 54rpx;
+  border-radius: 999rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--theme-subtle, rgba(58, 42, 48, 0.58));
+  background: var(--theme-soft, #fff0d6);
+  font-size: 21rpx;
+  font-weight: 850;
+}
+
+.create-step.active {
+  color: #ffffff;
+  background: var(--theme-primary, linear-gradient(135deg, #ffb36a, #ff8845));
+}
+
+.form-card,
+.section-card {
+  margin-top: 32rpx;
+  padding: 28rpx;
+}
+
+.form-card:first-of-type {
+  margin-top: 0;
+}
+
+.section-title {
+  color: var(--theme-text, #3a2a30);
+  font-size: 31rpx;
+  font-weight: 900;
+}
+
+.form-tip {
+  margin-top: 8rpx;
+  color: var(--theme-subtle, rgba(58, 42, 48, 0.58));
+  font-size: 23rpx;
+  line-height: 1.45;
+}
+
+.pet-select-card,
+.theme-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22rpx;
+}
+
+.pet-picker {
+  min-width: 260rpx;
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.pet-avatar {
+  width: 82rpx;
+  height: 82rpx;
+  border-radius: 28rpx;
+  background: var(--theme-soft, #ffe6f0);
+}
+
+.pet-avatar-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--theme-primary-text, #b65a7a);
+  font-weight: 900;
+}
+
+.pet-name {
+  color: var(--theme-text, #3a2a30);
+  font-size: 28rpx;
+  font-weight: 900;
+}
+
+.pet-meta {
+  margin-top: 6rpx;
+  color: var(--theme-subtle, rgba(58, 42, 48, 0.58));
+  font-size: 22rpx;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14rpx;
+  margin-top: 20rpx;
+}
+
+.photo-wrap,
+.photo,
+.photo-uploader {
+  aspect-ratio: 1 / 1;
+  border-radius: 28rpx;
+  background: var(--theme-soft, #ffe6f0);
+}
+
+.photo-wrap {
+  position: relative;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+}
+
+.photo-remove {
+  position: absolute;
+  right: -8rpx;
+  top: -8rpx;
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8a7772;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 6rpx 14rpx rgba(58, 42, 42, 0.10);
+  font-size: 30rpx;
+  font-weight: 900;
+}
+
+.photo-uploader {
+  border: 2rpx dashed var(--theme-border, rgba(255, 111, 163, 0.18));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--theme-primary-text, #b65a7a);
+  font-size: 22rpx;
+  font-weight: 800;
+  text-align: center;
+}
+
+.upload-plus {
+  font-size: 42rpx;
+  line-height: 1;
+}
+
+.form-item,
+.status-group {
+  margin-top: 24rpx;
+}
+
+.form-label {
+  margin-bottom: 14rpx;
+  color: var(--theme-text, #3a2a30);
+  font-size: 26rpx;
+  font-weight: 850;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.status-tag {
+  padding: 0 28rpx;
+  height: 56rpx;
+  border-radius: 999rpx;
+  background: #fff0f6;
+  color: #b65a7a;
+  font-size: 24rpx;
+  margin-right: 16rpx;
+  margin-bottom: 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1rpx solid rgba(255, 111, 163, 0.18);
+}
+
+.status-tag.active {
+  background: linear-gradient(135deg, #ff7aa8, #ff4f8b);
+  color: #ffffff;
+  box-shadow: 0 8rpx 18rpx rgba(255, 111, 163, 0.24);
+}
+
+.note-card textarea {
+  min-height: 180rpx;
+}
+
+.done-card .section-title {
+  margin-bottom: 16rpx;
+}
+
+.mini-btn {
+  min-width: 112rpx;
+  min-height: 56rpx;
+  font-size: 24rpx;
+}
+
+.safe-note {
+  margin: 32rpx 0 0;
+}
+
+.bottom-action {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  padding: 20rpx 32rpx calc(20rpx + env(safe-area-inset-bottom));
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(16rpx);
+  border-top: 1rpx solid rgba(255, 111, 163, 0.12);
+}
+
+.submit-btn {
+  min-height: 88rpx;
+  font-size: 30rpx;
+  font-weight: 900;
+}
+
+.create-social_sticker .create-hero::after {
+  content: "♥";
+  position: absolute;
+  right: 34rpx;
+  top: 28rpx;
+  color: #ff4f93;
+  font-size: 58rpx;
+  opacity: 0.55;
+}
+
+.create-scrapbook .create-hero,
+.form-scrapbook {
+  border-style: dashed;
+}
+
+.create-scrapbook .create-hero::after {
+  content: "MEMO";
+  position: absolute;
+  right: 24rpx;
+  top: 24rpx;
+  padding: 8rpx 20rpx;
+  color: #5a341c;
+  background: rgba(226, 156, 114, 0.58);
+  transform: rotate(8deg);
+  font-size: 20rpx;
+  font-weight: 900;
+}
+
+.create-realm_rpg .create-hero,
+.create-divine_legend .create-hero,
+.form-realm_rpg,
+.form-divine_legend {
+  color: #fff8dc;
+  background: rgba(246, 198, 91, 0.08);
+  border-color: rgba(246, 198, 91, 0.26);
+}
+
+.create-realm_rpg .create-step,
+.create-divine_legend .create-step {
+  color: rgba(255, 248, 220, 0.68);
+  background: rgba(246, 198, 91, 0.08);
+  border: 1rpx solid rgba(246, 198, 91, 0.20);
+}
+
+.create-realm_rpg .create-step.active,
+.create-divine_legend .create-step.active {
+  color: #241403;
+  background: var(--theme-primary);
+}
+
+.create-divine_legend .create-hero::after {
+  content: "♛";
+  position: absolute;
+  right: 34rpx;
+  top: 22rpx;
+  color: #f8d87a;
+  font-size: 60rpx;
+  text-shadow: 0 0 22rpx rgba(248, 216, 122, 0.36);
+}
+
+.form-social_sticker .photo-uploader,
+.form-social_sticker .status-tag {
+  border-radius: 999rpx;
+}
+
+.form-scrapbook .photo-wrap,
+.form-scrapbook .photo,
+.form-scrapbook .photo-uploader {
+  border-radius: 8rpx;
+}
+
+.form-scrapbook .photo-wrap {
+  padding: 8rpx;
+  background: #fffaf0;
+  transform: rotate(-2deg);
+}
+
+.form-realm_rpg .status-tag,
+.form-divine_legend .status-tag {
+  color: #f8d87a;
+  background: rgba(246, 198, 91, 0.08);
+  border-color: rgba(246, 198, 91, 0.24);
+}
+
+.form-realm_rpg .status-tag.active,
+.form-divine_legend .status-tag.active {
+  color: #241403;
+  background: var(--theme-primary);
+}
+
+.theme-realm-gold .bottom-action,
+.theme-tianming-god .bottom-action {
+  background: rgba(8, 6, 4, 0.86);
+  border-top-color: rgba(246, 198, 91, 0.22);
+}

@@ -1,0 +1,109 @@
+.reminder-edit-page {
+  padding-bottom: 150rpx;
+}
+
+.page-header {
+  margin-bottom: 28rpx;
+}
+
+.page-title {
+  font-size: 42rpx;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.page-subtitle {
+  margin-top: 10rpx;
+  color: var(--theme-subtle, #8b7765);
+  font-size: 24rpx;
+  line-height: 1.45;
+}
+
+.form-card {
+  margin-top: 28rpx;
+  padding: 28rpx;
+}
+
+.form-card:first-of-type {
+  margin-top: 0;
+}
+
+.section-title {
+  margin-bottom: 16rpx;
+  font-size: 31rpx;
+  font-weight: 900;
+}
+
+.form-item {
+  margin-top: 20rpx;
+}
+
+.form-label {
+  margin-bottom: 12rpx;
+  font-weight: 800;
+}
+
+.form-value {
+  min-height: 84rpx;
+  display: flex;
+  align-items: center;
+  color: var(--theme-text, #333333);
+}
+
+.form-tip {
+  margin-top: 6rpx;
+  color: var(--theme-subtle, #8b7765);
+  font-size: 23rpx;
+  line-height: 1.4;
+}
+
+.switch-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22rpx;
+}
+
+.weekday-row {
+  margin-top: 12rpx;
+}
+
+.status-tag {
+  min-height: 54rpx;
+  padding: 0 22rpx;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+}
+
+.safe-note {
+  margin-top: 28rpx;
+}
+
+.save-btn {
+  min-height: 88rpx;
+  margin-top: 28rpx;
+  font-size: 30rpx;
+  font-weight: 900;
+}
+
+.danger-zone {
+  margin-top: 32rpx;
+  padding: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.danger-title {
+  color: #c85b47;
+  font-size: 28rpx;
+  font-weight: 850;
+}
+
+.delete-btn {
+  min-width: 116rpx;
+  min-height: 56rpx;
+  font-size: 24rpx;
+}

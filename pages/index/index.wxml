@@ -1,0 +1,127 @@
+<view class="page home-page {{themeClass}} home-{{themeInfo.layoutType}}" style="{{customThemeStyle}}">
+  <view class="hero-card section-card theme-deco hero-{{themeInfo.heroVariant}}">
+    <view class="hero-top">
+      <view class="hero-copy">
+        <view class="hero-kicker">{{homeCopy.kicker}}</view>
+        <view class="hero-title">{{homeCopy.title}}</view>
+        <view class="hero-subtitle">{{homeCopy.subtitle}}</view>
+      </view>
+      <view class="member-badge" bindtap="openMembership">{{planName}}</view>
+    </view>
+
+    <view wx:if="{{themeInfo.heroVariant == 'warm_photo'}}" class="warm-hero-body">
+      <image wx:if="{{featuredPet && featuredPet.avatar}}" class="hero-pet-photo" src="{{featuredPet.avatar}}" mode="aspectFill"></image>
+      <view wx:else class="hero-pet-photo hero-pet-empty">毛</view>
+      <view class="warm-quote">每一天，都是独一无二的爱与陪伴</view>
+    </view>
+
+    <view wx:elif="{{themeInfo.heroVariant == 'xhs_sticker'}}" class="xhs-hero-body">
+      <view class="xhs-bubble">今日份可爱超标啦</view>
+      <image wx:if="{{featuredPet && featuredPet.avatar}}" class="xhs-hero-avatar" src="{{featuredPet.avatar}}" mode="aspectFill"></image>
+      <view wx:else class="xhs-hero-avatar hero-pet-empty">萌</view>
+      <view class="xhs-heart">♥</view>
+      <view class="xhs-camera">📷</view>
+    </view>
+
+    <view wx:elif="{{themeInfo.heroVariant == 'diary_cover'}}" class="diary-hero-body">
+      <view class="diary-cover">
+        <view class="diary-tape">主题手账</view>
+        <view class="diary-cover-title">毛孩日报</view>
+        <view class="diary-cover-sub">记录 TA 的每一天</view>
+      </view>
+    </view>
+
+    <view wx:elif="{{themeInfo.heroVariant == 'realm_panel'}}" class="realm-hero-body">
+      <view class="realm-orbit"></view>
+      <image wx:if="{{featuredPet && featuredPet.avatar}}" class="realm-hero-avatar" src="{{featuredPet.avatar}}" mode="aspectFill"></image>
+      <view wx:else class="realm-hero-avatar hero-pet-empty">灵</view>
+      <view class="realm-info">
+        <view class="realm-pet-name">{{featuredPet.name || '待觉醒灵宠'}}</view>
+        <view class="realm-pet-level">{{featuredPet.realm || '初灵觉醒'}} · Lv.{{featuredPet.level || 1}}</view>
+      </view>
+    </view>
+
+    <view wx:else class="god-hero-body">
+      <view class="god-crown-mark">♛</view>
+      <image wx:if="{{featuredPet && featuredPet.avatar}}" class="god-hero-avatar" src="{{featuredPet.avatar}}" mode="aspectFill"></image>
+      <view wx:else class="god-hero-avatar hero-pet-empty">神</view>
+      <view class="god-hero-title">天命所归 · 毛神附体</view>
+    </view>
+
+    <view class="theme-tag" bindtap="goThemeCenter">当前主题：{{themeName}}</view>
+  </view>
+
+  <view class="primary-btn primary-action action-{{themeInfo.buttonVariant}}" bindtap="goCreate">{{homeCopy.actionText}}</view>
+
+  <view class="quick-grid quick-{{themeInfo.quickCardVariant}}">
+    <view class="quick-card section-card theme-deco" wx:for="{{quickActions}}" wx:key="key" data-key="{{item.key}}" bindtap="handleQuickAction">
+      <view class="quick-icon">{{item.icon}}</view>
+      <view class="quick-text">
+        <view class="quick-title">{{item.title}}</view>
+        <view class="quick-desc">{{item.desc}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="home-section">
+    <view class="section-header">
+      <view class="section-title">{{homeCopy.petTitle}}</view>
+      <view class="section-more" bindtap="goPets">管理</view>
+    </view>
+
+    <view class="pet-list pet-{{themeInfo.petCardVariant}}" wx:if="{{pets.length}}">
+      <view class="pet-card section-card theme-deco" wx:for="{{pets}}" wx:key="_id" data-id="{{item._id}}" bindtap="goPetLevel">
+        <image wx:if="{{item.avatar}}" class="pet-avatar" src="{{item.avatar}}" mode="aspectFill"></image>
+        <view wx:else class="pet-avatar pet-avatar-empty">毛</view>
+        <view class="pet-body">
+          <view class="pet-row">
+            <view class="pet-copy">
+              <view class="pet-name">{{item.name}}</view>
+              <view class="pet-type">{{item.typeText}}</view>
+            </view>
+            <view class="pet-level-tag">{{item.realm}} · Lv.{{item.level}}</view>
+          </view>
+          <view class="pet-progress">
+            <view class="pet-progress-fill" style="width: {{item.expProgress}}%;"></view>
+          </view>
+          <view class="pet-meta">{{item.todayPracticeText}} · 灵气 {{item.expText}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="empty-card section-card theme-deco empty-{{themeInfo.emptyStateVariant}}" wx:else bindtap="goPets">
+      <image class="empty-sticker" src="/assets/stickers/paw-orange.png"></image>
+      <view>
+        <view class="empty-title">还没有宠物档案</view>
+        <view class="empty-desc">先添加一只毛孩子，开始记录它的日常。</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="home-section">
+    <view class="section-header">
+      <view class="section-title">{{homeCopy.reminderTitle}}</view>
+      <view class="section-more" bindtap="goReminders">全部</view>
+    </view>
+
+    <view class="reminder-list reminder-{{themeInfo.reminderCardVariant}}" wx:if="{{todayReminders.length}}">
+      <view class="reminder-card section-card theme-deco" wx:for="{{todayReminders}}" wx:key="_id">
+        <view class="reminder-time">{{item.timeText}}</view>
+        <view class="reminder-main">
+          <view class="reminder-title">{{item.petName}} {{item.title}}</view>
+          <view class="reminder-status {{item.statusClass}}">{{item.statusText}}</view>
+        </view>
+        <view class="secondary-btn complete-btn" data-id="{{item._id}}" bindtap="completeReminder">完成</view>
+      </view>
+    </view>
+
+    <view class="empty-card reminder-empty section-card theme-deco" wx:else>
+      <image class="empty-sticker" src="/assets/stickers/bone.png"></image>
+      <view class="empty-copy">
+        <view class="empty-title">今天还没有提醒</view>
+        <view class="empty-desc">毛孩子的小日程很清爽</view>
+      </view>
+      <view class="secondary-btn add-reminder-btn" bindtap="addReminder">新增提醒</view>
+    </view>
+  </view>
+</view>

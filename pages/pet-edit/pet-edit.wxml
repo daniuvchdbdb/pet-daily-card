@@ -1,0 +1,75 @@
+<view class="page pet-edit-page {{themeClass}}" style="{{customThemeStyle}}">
+  <view class="page-header">
+    <view class="page-title">{{id ? '编辑宠物' : '新增宠物'}}</view>
+    <view class="page-subtitle">基础资料用于日报卡、提醒和灵宠修行展示。</view>
+  </view>
+
+  <view class="form-card avatar-card">
+    <image wx:if="{{form.avatar}}" class="avatar" src="{{form.avatar}}" mode="aspectFill"></image>
+    <view wx:else class="avatar avatar-placeholder">毛</view>
+    <view class="avatar-info">
+      <view class="section-title">宠物头像</view>
+      <view class="form-tip">支持从相册选择或直接拍照。</view>
+    </view>
+    <view class="secondary-btn mini-btn" bindtap="chooseAvatar">上传</view>
+  </view>
+
+  <view class="form-card">
+    <view class="section-title">基础信息</view>
+    <view class="form-item">
+      <view class="form-label">宠物昵称</view>
+      <input value="{{form.name}}" data-key="name" bindinput="input" placeholder="例如 奶牛" />
+    </view>
+    <view class="form-item">
+      <view class="form-label">宠物类型</view>
+      <picker range="{{petTypes}}" value="{{typeIndex}}" bindchange="pickType">
+        <view class="form-value">{{form.type || '请选择'}}</view>
+      </picker>
+    </view>
+    <view class="form-item">
+      <view class="form-label">品种</view>
+      <input value="{{form.breed}}" data-key="breed" bindinput="input" placeholder="例如 英短 / 柯基" />
+    </view>
+    <view class="form-item">
+      <view class="form-label">性别</view>
+      <picker range="{{genders}}" value="{{genderIndex}}" bindchange="pickGender">
+        <view class="form-value">{{form.gender || '请选择'}}</view>
+      </picker>
+    </view>
+    <view class="form-item">
+      <view class="form-label">生日</view>
+      <picker mode="date" value="{{form.birthday}}" bindchange="pickBirthday">
+        <view class="form-value">{{form.birthday || '请选择'}}</view>
+      </picker>
+    </view>
+    <view class="form-item">
+      <view class="form-label">体重 kg</view>
+      <input type="digit" value="{{form.weight}}" data-key="weight" bindinput="input" placeholder="可选" />
+    </view>
+  </view>
+
+  <view class="form-card">
+    <view class="section-title">性格与备注</view>
+    <view class="form-item">
+      <view class="form-label">性格标签</view>
+      <view class="tag-row">
+        <view class="status-tag {{item.selected ? 'active' : ''}}" wx:for="{{tagItems}}" wx:key="label" data-value="{{item.label}}" bindtap="toggleTag">{{item.label}}</view>
+      </view>
+    </view>
+
+    <view class="form-item">
+      <view class="form-label">特殊备注</view>
+      <textarea value="{{form.note}}" data-key="note" bindinput="input" placeholder="例如 肠胃敏感、怕吹风等" />
+    </view>
+  </view>
+
+  <view class="primary-btn save-btn" bindtap="save">保存宠物档案</view>
+
+  <view class="danger-zone section-card" wx:if="{{id}}">
+    <view>
+      <view class="danger-title">删除宠物档案</view>
+      <view class="form-tip">删除后不会影响已经保存的历史日报卡。</view>
+    </view>
+    <view class="danger-btn delete-btn" bindtap="deletePet">删除</view>
+  </view>
+</view>

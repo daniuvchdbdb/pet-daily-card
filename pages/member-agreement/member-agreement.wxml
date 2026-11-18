@@ -1,0 +1,17 @@
+<view class="page agreement-page">
+  <view class="page-header">
+    <view class="page-title">功能免费开放说明</view>
+    <view class="page-subtitle">会员系统已移除，全部权益直接可用。</view>
+  </view>
+
+  <view class="section-card agreement-section" wx:for="{{sections}}" wx:key="title">
+    <view class="section-title">{{item.title}}</view>
+    <view class="agreement-text">{{item.text}}</view>
+  </view>
+
+  <view class="section-card agreement-section">
+    <view class="section-title">问题反馈</view>
+    <view class="agreement-text">使用过程中如遇异常，可通过客服反馈。</view>
+    <button class="contact-btn" open-type="contact">联系客服</button>
+  </view>
+</view>

@@ -1,0 +1,119 @@
+<view class="page create-page {{themeClass}} create-{{themeInfo.layoutType}}" style="{{customThemeStyle}}">
+  <view class="page-header create-hero create-{{themeInfo.heroVariant}}">
+    <view class="create-kicker">{{themeInfo.name}}</view>
+    <view class="page-title">{{createCopy.title}}</view>
+    <view class="page-subtitle">{{createCopy.subtitle}}</view>
+    <view class="create-step-row">
+      <view class="create-step active">基础信息</view>
+      <view class="create-step">今日记录</view>
+      <view class="create-step">生成预览</view>
+    </view>
+  </view>
+
+  <view class="form-card pet-select-card form-{{themeInfo.layoutType}}">
+    <view>
+      <view class="section-title">选择宠物</view>
+      <view class="form-tip">日报会记录到当前宠物的历史和成长相册中。</view>
+    </view>
+    <picker range="{{pets}}" range-key="name" value="{{petIndex}}" bindchange="pickPet">
+      <view class="pet-picker">
+        <image wx:if="{{selectedPet.avatar}}" class="pet-avatar" src="{{selectedPet.avatar}}" mode="aspectFill"></image>
+        <view wx:else class="pet-avatar pet-avatar-placeholder">毛</view>
+        <view class="pet-picker-info">
+          <view class="pet-name">{{selectedPet.name || '请选择宠物'}}</view>
+          <view class="pet-meta">{{selectedPet.type || '点击选择毛孩子'}}</view>
+        </view>
+      </view>
+    </picker>
+  </view>
+
+  <view class="form-card photo-card form-{{themeInfo.layoutType}}">
+    <view class="section-title">{{createCopy.photoTitle}}</view>
+    <view class="form-tip">可上传 1-4 张。云端保存失败时，也会保留本地预览继续生成。</view>
+    <view class="photo-grid">
+      <view class="photo-wrap" wx:for="{{form.images}}" wx:key="*this">
+        <image class="photo" src="{{item}}" mode="aspectFill"></image>
+        <view class="photo-remove" data-index="{{index}}" bindtap="removeImage">×</view>
+      </view>
+      <view class="photo-uploader" wx:if="{{form.images.length < 4}}" bindtap="chooseImages">
+        <view class="upload-plus">+</view>
+        <view>添加今日照片</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="form-card form-{{themeInfo.layoutType}}">
+    <view class="section-title">基础记录</view>
+    <view class="form-item">
+      <view class="form-label">今日体重 kg</view>
+      <input type="digit" value="{{form.weight}}" data-key="weight" bindinput="input" placeholder="可选" />
+    </view>
+
+    <view class="status-group">
+      <view class="form-label">吃饭情况</view>
+      <view class="tag-row">
+        <view class="status-tag {{form.foodStatus === item ? 'active' : ''}}" wx:for="{{statusOptions.foodStatus}}" wx:key="*this" data-key="foodStatus" data-value="{{item}}" bindtap="chooseStatus">{{item}}</view>
+      </view>
+    </view>
+    <view class="status-group">
+      <view class="form-label">喝水情况</view>
+      <view class="tag-row">
+        <view class="status-tag {{form.waterStatus === item ? 'active' : ''}}" wx:for="{{statusOptions.waterStatus}}" wx:key="*this" data-key="waterStatus" data-value="{{item}}" bindtap="chooseStatus">{{item}}</view>
+      </view>
+    </view>
+    <view class="status-group">
+      <view class="form-label">便便情况</view>
+      <view class="tag-row">
+        <view class="status-tag {{form.poopStatus === item ? 'active' : ''}}" wx:for="{{statusOptions.poopStatus}}" wx:key="*this" data-key="poopStatus" data-value="{{item}}" bindtap="chooseStatus">{{item}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="form-card form-{{themeInfo.layoutType}}">
+    <view class="section-title">状态记录</view>
+    <view class="status-group">
+      <view class="form-label">精神状态</view>
+      <view class="tag-row">
+        <view class="status-tag {{form.moodStatus === item ? 'active' : ''}}" wx:for="{{statusOptions.moodStatus}}" wx:key="*this" data-key="moodStatus" data-value="{{item}}" bindtap="chooseStatus">{{item}}</view>
+      </view>
+    </view>
+    <view class="status-group">
+      <view class="form-label">运动情况</view>
+      <view class="tag-row">
+        <view class="status-tag {{form.exerciseStatus === item ? 'active' : ''}}" wx:for="{{statusOptions.exerciseStatus}}" wx:key="*this" data-key="exerciseStatus" data-value="{{item}}" bindtap="chooseStatus">{{item}}</view>
+      </view>
+    </view>
+    <view class="status-group">
+      <view class="form-label">今日心情</view>
+      <view class="tag-row">
+        <view class="status-tag {{form.emotionStatus === item ? 'active' : ''}}" wx:for="{{statusOptions.emotionStatus}}" wx:key="*this" data-key="emotionStatus" data-value="{{item}}" bindtap="chooseStatus">{{item}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="form-card note-card form-{{themeInfo.layoutType}}">
+    <view class="section-title">{{createCopy.noteTitle}}</view>
+    <textarea value="{{form.dailyNote}}" data-key="dailyNote" bindinput="input" placeholder="例如：今天一直黏着我，像个小跟屁虫。" />
+  </view>
+
+  <view class="section-card done-card form-{{themeInfo.layoutType}}" wx:if="{{careRecords.length}}">
+    <view class="section-title">今日已完成</view>
+    <view class="tag-row">
+      <view class="status-tag active" wx:for="{{careRecords}}" wx:key="title">{{item.title}}</view>
+    </view>
+  </view>
+
+  <view class="section-card theme-card form-{{themeInfo.layoutType}}">
+    <view>
+      <view class="section-title">当前主题：{{themeInfo.name}}</view>
+      <view class="form-tip">主题影响整套页面风格，日报卡会同步使用当前主题。</view>
+    </view>
+    <view class="secondary-btn mini-btn" bindtap="openThemeCenter">更换</view>
+  </view>
+
+  <view class="safe-note">本记录仅作日常养护观察，不替代兽医诊断。</view>
+  <view class="safe-note">本小程序仅用于宠物日常记录和养护提醒，不提供医疗诊断或治疗建议。</view>
+  <view class="bottom-action">
+    <view class="primary-btn submit-btn" bindtap="generate">{{createCopy.submitText}}</view>
+  </view>
+</view>

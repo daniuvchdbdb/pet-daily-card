@@ -1,0 +1,42 @@
+<view class="page">
+  <view class="title">成长相册</view>
+
+  <view class="section card level-summary" wx:if="{{currentPet}}" bindtap="openPetLevel">
+    <view class="realm-wrap" style="background: {{currentPet.realmInfo.iconColor}};">
+      <image wx:if="{{!currentPet.realmIconBroken}}" src="{{currentPet.realmInfo.image}}" binderror="onRealmIconError"></image>
+      <text wx:else>{{currentPet.realmInfo.iconEmoji}}</text>
+    </view>
+    <view class="summary-info">
+      <view class="name">{{currentPet.name}} · {{currentPet.realm}}</view>
+      <view class="subtle">Lv.{{currentPet.level}} · 连续修行 {{currentPet.streakDays}} 天</view>
+      <view class="exp-bar">
+        <view class="exp-fill" style="width: {{currentPet.expProgress}}%;"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section grid">
+    <view class="card stat">
+      <view class="num">{{totalDays}}</view>
+      <view class="subtle">累计记录天数</view>
+    </view>
+    <view class="card stat">
+      <view class="num">{{continuousDays}}</view>
+      <view class="subtle">连续记录天数</view>
+    </view>
+  </view>
+
+  <view class="section timeline" wx:if="{{cards.length}}">
+    <view class="card album-item" wx:for="{{cards}}" wx:key="_id">
+      <image class="thumb" src="{{item.cardImageUrl || item.images[0]}}" mode="aspectFill"></image>
+      <view class="info">
+        <view class="name">{{item.recordDate}}</view>
+        <view class="subtle">{{item.petName}} · {{item.emotionStatus}}</view>
+        <view class="subtle" wx:if="{{item.careRecordCount}}">养护完成 {{item.careRecordCount}} 项</view>
+      </view>
+    </view>
+  </view>
+  <view class="card empty section" wx:else>相册还空着，先生成一张日报卡吧。</view>
+
+  <view class="safe-note">本功能为趣味成长记录，不代表宠物健康状态。</view>
+</view>

@@ -1,0 +1,21 @@
+<view class="page history-page {{themeClass}}" style="{{customThemeStyle}}">
+  <view class="theme-title page-title">历史记录</view>
+  <view class="section-card section">
+    <view class="label">按宠物筛选</view>
+    <picker range="{{petOptions}}" range-key="name" value="{{petIndex}}" bindchange="pickPet">
+      <view>{{petOptions[petIndex].name}}</view>
+    </picker>
+  </view>
+
+  <view class="section list" wx:if="{{cards.length}}">
+    <view class="section-card row history-card" wx:for="{{cards}}" wx:key="_id" data-id="{{item._id}}" bindtap="openDetail">
+      <image class="thumb" src="{{item.cardImageUrl || item.images[0]}}" mode="aspectFill"></image>
+      <view class="info">
+        <view class="name">{{item.petName}}</view>
+        <view class="theme-subtitle">{{item.recordDate}}</view>
+        <view class="theme-subtitle">{{item.templateLabel}}{{item.watermarkLabel}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="section-card empty section" wx:else>还没有生成过日报卡。</view>
+</view>

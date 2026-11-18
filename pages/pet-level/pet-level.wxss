@@ -1,0 +1,196 @@
+.level-page {
+  padding-bottom: 54rpx;
+}
+
+.hero-level {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14rpx;
+}
+
+.big-avatar {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 46rpx;
+}
+
+.realm-badge {
+  width: 188rpx;
+  height: 188rpx;
+  margin-top: -18rpx;
+  border-radius: 999rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20rpx 44rpx rgba(242, 155, 75, 0.22), inset 0 4rpx 0 rgba(255, 255, 255, 0.7);
+}
+
+.realm-icon-large {
+  width: 178rpx;
+  height: 178rpx;
+  border-radius: 999rpx;
+}
+
+.realm-emoji-large {
+  color: #fff;
+  font-size: 68rpx;
+}
+
+.pet-name {
+  font-size: 42rpx;
+  font-weight: 900;
+}
+
+.realm-name {
+  color: #8c5524;
+  font-size: 34rpx;
+  font-weight: 900;
+}
+
+.realm-desc {
+  max-width: 620rpx;
+  color: #6c5847;
+  line-height: 1.55;
+}
+
+.level-progress {
+  width: 100%;
+  margin-top: 12rpx;
+}
+
+.progress-head {
+  display: flex;
+  justify-content: space-between;
+  color: #8c5524;
+  font-size: 24rpx;
+  font-weight: 800;
+}
+
+.exp-bar {
+  height: 16rpx;
+  margin-top: 12rpx;
+  border-radius: 999rpx;
+  background: #ffe1a8;
+  overflow: hidden;
+}
+
+.exp-bar.large {
+  height: 22rpx;
+}
+
+.exp-fill {
+  height: 100%;
+  border-radius: 999rpx;
+  background: linear-gradient(90deg, #f6c85f, #f08e39);
+}
+
+.stat {
+  text-align: center;
+}
+
+.num {
+  color: #8c5524;
+  font-size: 48rpx;
+  font-weight: 900;
+}
+
+.small {
+  font-size: 32rpx;
+}
+
+.log-list,
+.badge-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+  margin-top: 20rpx;
+}
+
+.log-item,
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18rpx;
+  padding: 18rpx;
+  border-radius: 26rpx;
+  background: rgba(255, 253, 248, 0.72);
+}
+
+.log-title,
+.badge-name {
+  font-weight: 800;
+}
+
+.exp-plus {
+  color: #f08e39;
+  font-size: 32rpx;
+  font-weight: 900;
+}
+
+.badge {
+  justify-content: flex-start;
+}
+
+.badge.locked {
+  opacity: 0.46;
+}
+
+.badge-icon {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 999rpx;
+  background: #ffe8bc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34rpx;
+}
+
+.atlas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18rpx;
+  margin-top: 22rpx;
+}
+
+.realm-cell {
+  padding: 18rpx 10rpx;
+  border-radius: 28rpx;
+  background: rgba(255, 253, 248, 0.78);
+  text-align: center;
+}
+
+.realm-cell.locked {
+  opacity: 0.42;
+}
+
+.realm-cell-icon {
+  width: 88rpx;
+  height: 88rpx;
+  margin: 0 auto 10rpx;
+  border-radius: 999rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.realm-cell-icon image {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 999rpx;
+}
+
+.cell-name {
+  font-size: 24rpx;
+  color: #6c5847;
+  font-weight: 800;
+}
+
+.small-empty {
+  margin-top: 20rpx;
+}

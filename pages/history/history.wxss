@@ -1,0 +1,16 @@
+.thumb {
+  width: 156rpx;
+  height: 156rpx;
+  border-radius: 22rpx;
+  background: #ffe6b8;
+}
+.info {
+  flex: 1;
+}
+.name {
+  font-size: 32rpx;
+  font-weight: 700;
+}
+.empty {
+  color: #8b7765;
+}

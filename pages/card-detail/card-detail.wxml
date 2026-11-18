@@ -1,0 +1,15 @@
+<view class="page detail-page {{themeClass}}" style="{{customThemeStyle}}" wx:if="{{card}}">
+  <view class="theme-title page-title">{{card.petName}} 的日报</view>
+  <view class="theme-subtitle">{{card.recordDate}}</view>
+  <view class="theme-subtitle">主题：{{card.themeLabel}}</view>
+  <image class="preview section" src="{{card.cardImageUrl || card.cardImagePath || card.images[0]}}" mode="widthFix"></image>
+  <view class="section-card section">
+    <view class="label">今日状态</view>
+    <view class="theme-subtitle">吃饭 {{card.foodStatus}} · 喝水 {{card.waterStatus}} · 便便 {{card.poopStatus}}</view>
+    <view class="theme-subtitle">精神 {{card.moodStatus}} · 运动 {{card.exerciseStatus}} · 心情 {{card.emotionStatus}}</view>
+    <view class="safe-note" wx:if="{{card.careRecordCount}}">
+      今日已完成：<block wx:for="{{card.careRecords}}" wx:key="title">{{item.title}} </block>
+    </view>
+  </view>
+  <view class="primary-btn section save-btn" bindtap="saveImage">保存图片</view>
+</view>

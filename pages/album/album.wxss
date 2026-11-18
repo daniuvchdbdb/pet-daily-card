@@ -1,0 +1,71 @@
+.stat {
+  text-align: center;
+}
+.level-summary {
+  display: flex;
+  align-items: center;
+  gap: 22rpx;
+}
+.realm-wrap {
+  width: 118rpx;
+  height: 118rpx;
+  border-radius: 999rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 3rpx 0 rgba(255, 255, 255, 0.75);
+}
+.realm-wrap image {
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 999rpx;
+}
+.realm-wrap text {
+  color: #fff;
+  font-size: 42rpx;
+}
+.summary-info {
+  flex: 1;
+}
+.exp-bar {
+  height: 16rpx;
+  margin-top: 14rpx;
+  border-radius: 999rpx;
+  background: #ffe1a8;
+  overflow: hidden;
+}
+.exp-fill {
+  height: 100%;
+  border-radius: 999rpx;
+  background: linear-gradient(90deg, #f6c85f, #f08e39);
+}
+.num {
+  color: #f29b4b;
+  font-size: 52rpx;
+  font-weight: 800;
+}
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+.album-item {
+  display: flex;
+  gap: 20rpx;
+}
+.thumb {
+  width: 150rpx;
+  height: 190rpx;
+  border-radius: 20rpx;
+  background: #ffe6b8;
+}
+.info {
+  flex: 1;
+}
+.name {
+  font-weight: 700;
+  font-size: 32rpx;
+}
+.empty {
+  color: #8b7765;
+}

@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/pets/pets",
+    "pages/pet-edit/pet-edit",
+    "pages/pet-level/pet-level",
+    "pages/create-card/create-card",
+    "pages/theme-center/theme-center",
+    "pages/templates/templates",
+    "pages/card-preview/card-preview",
+    "pages/history/history",
+    "pages/card-detail/card-detail",
+    "pages/album/album",
+    "pages/reminders/reminders",
+    "pages/reminder-edit/reminder-edit",
+    "pages/profile/profile"
+  ],
+  "window": {
+    "navigationBarTitleText": "毛孩日报",
+    "navigationBarBackgroundColor": "#FFF8EF",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#FFF8EF"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#FF6F8F",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/tabbar/home.png",
+        "selectedIconPath": "assets/tabbar/home-active.png"
+      },
+      {
+        "pagePath": "pages/pets/pets",
+        "text": "宠物",
+        "iconPath": "assets/tabbar/pet.png",
+        "selectedIconPath": "assets/tabbar/pet-active.png"
+      },
+      {
+        "pagePath": "pages/reminders/reminders",
+        "text": "提醒",
+        "iconPath": "assets/tabbar/reminder.png",
+        "selectedIconPath": "assets/tabbar/reminder-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "assets/tabbar/profile.png",
+        "selectedIconPath": "assets/tabbar/profile-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

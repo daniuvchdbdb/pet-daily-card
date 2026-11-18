@@ -1,0 +1,29 @@
+.agreement-page {
+  padding-bottom: 120rpx;
+}
+
+.agreement-card,
+.contact-card {
+  margin-top: 24rpx;
+}
+
+.agreement-text {
+  margin-top: 16rpx;
+  color: var(--theme-subtle, rgba(58, 42, 48, 0.68));
+  font-size: 26rpx;
+  line-height: 1.75;
+}
+
+.contact-btn {
+  margin-top: 24rpx;
+  height: 72rpx;
+  border-radius: 999rpx;
+  color: var(--theme-primary-solid, #ff6fa3);
+  background: rgba(255, 111, 163, 0.10);
+  font-size: 26rpx;
+  border: 0;
+}
+
+.contact-btn::after {
+  border: 0;
+}

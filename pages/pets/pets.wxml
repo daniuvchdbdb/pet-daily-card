@@ -1,0 +1,50 @@
+<view class="page pets-page {{themeClass}} pets-{{themeInfo.layoutType}}" style="{{customThemeStyle}}">
+  <view class="page-header">
+    <view>
+      <view class="page-title">宠物档案</view>
+      <view class="page-subtitle">记录每只毛孩子的基础信息与灵宠修行成长。</view>
+    </view>
+    <view class="primary-btn header-action" bindtap="addPet">新增</view>
+  </view>
+
+  <view class="pet-list" wx:if="{{pets.length}}">
+    <view class="section-card pet-card pet-{{themeInfo.petCardVariant}} theme-deco" wx:for="{{pets}}" wx:key="_id">
+      <view class="pet-head">
+        <image wx:if="{{item.avatar}}" class="avatar" src="{{item.avatar}}" mode="aspectFill"></image>
+        <view wx:else class="avatar avatar-placeholder">毛</view>
+        <view class="pet-info">
+          <view class="pet-name">{{item.name}}</view>
+          <view class="pet-type">{{item.typeText}}</view>
+        </view>
+        <view class="ghost-btn edit-btn" data-id="{{item._id}}" bindtap="editPet">编辑</view>
+      </view>
+
+      <view class="pet-tags">
+        <view class="status-tag theme-chip">{{item.themeName}}</view>
+        <view class="status-tag level-chip">{{item.realm}} · Lv.{{item.level}}</view>
+      </view>
+
+      <view class="exp-area" bindtap="openPetLevel" data-id="{{item._id}}">
+        <view class="exp-meta">
+          <view>灵气 {{item.expText}}</view>
+          <view>连续修行 {{item.streakDays || 0}} 天</view>
+        </view>
+        <view class="exp-bar">
+          <view class="exp-fill" style="width: {{item.expProgress}}%;"></view>
+        </view>
+      </view>
+
+      <view class="card-actions">
+        <view class="secondary-btn mini-btn" data-id="{{item._id}}" bindtap="openPetLevel">查看修行</view>
+        <view class="secondary-btn mini-btn" data-id="{{item._id}}" bindtap="openReminder">养护提醒</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section-card empty-state" wx:else>
+    <image class="empty-sticker" src="/assets/stickers/paw-pink.png"></image>
+    <view class="empty-title">还没有宠物档案</view>
+    <view class="empty-subtitle">添加第一只毛孩子，开始记录日常和成长。</view>
+    <view class="primary-btn empty-action" bindtap="addPet">添加宠物</view>
+  </view>
+</view>

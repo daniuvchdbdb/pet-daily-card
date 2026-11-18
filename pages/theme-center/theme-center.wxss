@@ -1,0 +1,386 @@
+.theme-center-page {
+  padding-bottom: 160rpx;
+}
+
+.current-theme-card {
+  padding: 32rpx;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(255, 111, 143, 0.22), transparent 160rpx),
+    linear-gradient(135deg, #fffafa 0%, #fff0f5 100%);
+}
+
+.current-badge {
+  display: inline-flex;
+  padding: 8rpx 18rpx;
+  border-radius: 999rpx;
+  color: #ff5f83;
+  background: #ffe6ee;
+  font-size: 23rpx;
+  font-weight: 850;
+}
+
+.current-content {
+  margin-top: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24rpx;
+}
+
+.current-name {
+  color: #3a2a2a;
+  font-size: 42rpx;
+  font-weight: 950;
+}
+
+.current-desc {
+  margin-top: 12rpx;
+  color: #8a7772;
+  font-size: 25rpx;
+  line-height: 1.5;
+}
+
+.current-pet {
+  width: 150rpx;
+  height: 150rpx;
+  opacity: 0.72;
+}
+
+.level-pill,
+.theme-level {
+  display: inline-flex;
+  margin-top: 18rpx;
+  padding: 8rpx 18rpx;
+  border-radius: 999rpx;
+  color: #ff5f83;
+  background: #ffe6ee;
+  font-size: 22rpx;
+  font-weight: 900;
+}
+
+.theme-level {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 0;
+  border-radius: 0 0 18rpx 0;
+}
+
+.theme-level.free {
+  color: #5b9d44;
+  background: #eff9e8;
+}
+
+.theme-level.pro {
+  color: #9b6a16;
+  background: #fff1c9;
+}
+
+.creator-banner {
+  margin-top: 22rpx;
+  padding: 18rpx 20rpx;
+  border-radius: 24rpx;
+  color: #b67512;
+  background: rgba(246, 182, 74, 0.16);
+  font-size: 24rpx;
+  line-height: 1.45;
+}
+
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20rpx;
+}
+
+.theme-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.theme-preview {
+  position: relative;
+  height: 210rpx;
+  overflow: hidden;
+  border-radius: 32rpx 32rpx 0 0;
+}
+
+.mini-preview {
+  padding: 24rpx;
+  box-sizing: border-box;
+}
+
+.theme-name {
+  margin: 22rpx 22rpx 0;
+  color: var(--theme-text, #3a2a2a);
+  font-size: 29rpx;
+  font-weight: 900;
+}
+
+.theme-scene {
+  margin: 8rpx 22rpx 0;
+  color: var(--theme-primary-solid, #ff6f8f);
+  font-size: 22rpx;
+  font-weight: 850;
+}
+
+.theme-desc {
+  min-height: 66rpx;
+  margin: 10rpx 22rpx 0;
+  color: var(--theme-subtle, #8a7772);
+  font-size: 23rpx;
+  line-height: 1.42;
+}
+
+.theme-card.active {
+  outline: 4rpx solid var(--theme-primary-solid, #ff944d);
+}
+
+.lock-mask {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8rpx;
+  color: #ffffff;
+  background: rgba(42, 25, 18, 0.34);
+  backdrop-filter: blur(3rpx);
+}
+
+.lock-icon {
+  width: 54rpx;
+  height: 54rpx;
+  border-radius: 999rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4a2f22;
+  background: rgba(255, 255, 255, 0.92);
+  font-size: 21rpx;
+  font-weight: 950;
+}
+
+.lock-text {
+  font-size: 21rpx;
+  font-weight: 900;
+}
+
+.mini-warm {
+  height: 100%;
+  border-radius: 24rpx;
+  padding: 18rpx;
+  background: linear-gradient(180deg, #fff7e8, #fffdf7);
+  border: 2rpx solid rgba(255, 177, 92, 0.20);
+}
+
+.mini-title {
+  position: relative;
+  z-index: 2;
+  color: var(--theme-text, #4a2f22);
+  font-size: 26rpx;
+  font-weight: 950;
+}
+
+.mini-photo {
+  margin-top: 14rpx;
+  height: 82rpx;
+  border-radius: 18rpx;
+  background: linear-gradient(135deg, #ffd49b, #ffffff);
+}
+
+.mini-button {
+  width: 70%;
+  height: 22rpx;
+  margin-top: 16rpx;
+  border-radius: 999rpx;
+  background: linear-gradient(135deg, #ffb36a, #ff8845);
+}
+
+.mini-xhs {
+  height: 100%;
+  border-radius: 24rpx;
+  padding: 18rpx;
+  background: radial-gradient(circle at 80% 18%, rgba(255, 79, 147, 0.22), transparent 90rpx), #fff1f5;
+}
+
+.mini-heart {
+  position: absolute;
+  right: 24rpx;
+  top: 20rpx;
+  color: #ff4f93;
+  font-size: 40rpx;
+}
+
+.mini-xhs .mini-photo {
+  height: 92rpx;
+  border: 6rpx solid #ffffff;
+  box-shadow: 0 8rpx 16rpx rgba(255, 79, 147, 0.14);
+}
+
+.mini-stickers {
+  display: flex;
+  gap: 10rpx;
+  margin-top: 12rpx;
+}
+
+.mini-stickers text {
+  padding: 4rpx 12rpx;
+  border-radius: 999rpx;
+  color: #ff4f93;
+  background: #ffffff;
+  font-size: 19rpx;
+}
+
+.mini-diary {
+  height: 100%;
+  padding: 18rpx;
+  border-radius: 18rpx;
+  background:
+    linear-gradient(rgba(119, 78, 42, 0.06) 1rpx, transparent 1rpx),
+    #fff4d6;
+  background-size: 100% 28rpx;
+  border: 2rpx dashed rgba(119, 78, 42, 0.24);
+}
+
+.mini-tape {
+  display: inline-flex;
+  padding: 5rpx 16rpx;
+  color: #5a341c;
+  background: rgba(226, 156, 114, 0.58);
+  transform: rotate(-5deg);
+  font-size: 20rpx;
+  font-weight: 900;
+}
+
+.mini-polaroid {
+  width: 96rpx;
+  height: 96rpx;
+  margin-top: 14rpx;
+  background: #ffffff;
+  border: 10rpx solid #fffaf0;
+  transform: rotate(-4deg);
+}
+
+.mini-lines {
+  position: absolute;
+  right: 24rpx;
+  bottom: 34rpx;
+  width: 112rpx;
+  height: 60rpx;
+  border-top: 3rpx dashed rgba(90, 52, 28, 0.30);
+  border-bottom: 3rpx dashed rgba(90, 52, 28, 0.30);
+}
+
+.mini-realm,
+.mini-god {
+  height: 100%;
+  border-radius: 22rpx;
+  padding: 18rpx;
+  background: radial-gradient(circle at 50% 20%, rgba(246, 198, 91, 0.18), transparent 100rpx), linear-gradient(180deg, #1f1206, #080604);
+  border: 2rpx solid rgba(246, 198, 91, 0.28);
+}
+
+.mini-realm .mini-title,
+.mini-god .mini-title {
+  color: #fff8dc;
+  text-align: center;
+}
+
+.mini-rune,
+.mini-halo {
+  width: 86rpx;
+  height: 86rpx;
+  margin: 10rpx auto 0;
+  border-radius: 999rpx;
+  border: 4rpx solid rgba(246, 198, 91, 0.46);
+  box-shadow: 0 0 22rpx rgba(246, 198, 91, 0.20);
+}
+
+.mini-bar {
+  height: 14rpx;
+  margin-top: 18rpx;
+  border-radius: 999rpx;
+  background: linear-gradient(90deg, #8e5520, #f6c65b);
+}
+
+.mini-god {
+  background: radial-gradient(circle at 50% 12%, rgba(248, 216, 122, 0.32), transparent 110rpx), linear-gradient(180deg, #120804, #050403);
+  border-color: rgba(248, 216, 122, 0.38);
+}
+
+.mini-crown {
+  color: #f8d87a;
+  text-align: center;
+  font-size: 38rpx;
+  line-height: 1;
+}
+
+.mini-god .mini-halo {
+  border-color: rgba(248, 216, 122, 0.54);
+}
+
+.theme-actions {
+  display: flex;
+  gap: 12rpx;
+  padding: 20rpx 22rpx 24rpx;
+}
+
+.mini-btn {
+  flex: 1;
+  min-height: 58rpx;
+  padding: 0 12rpx;
+  font-size: 22rpx;
+}
+
+.custom-editor {
+  margin-top: 32rpx;
+}
+
+.swatch-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+  margin: 14rpx 0 24rpx;
+}
+
+.swatch {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  border: 5rpx solid rgba(255, 255, 255, 0.92);
+  box-shadow: 0 8rpx 18rpx rgba(255, 111, 143, 0.12);
+}
+
+.swatch.active {
+  outline: 4rpx solid var(--theme-primary-solid, #ff6f8f);
+}
+
+.custom-preview {
+  margin-top: 28rpx;
+}
+
+.save-custom {
+  margin-top: 28rpx;
+}
+
+.theme-realm-gold .current-theme-card,
+.theme-tianming-god .current-theme-card {
+  background: rgba(246, 198, 91, 0.08);
+  border-color: rgba(246, 198, 91, 0.28);
+}
+
+.theme-realm-gold .current-name,
+.theme-tianming-god .current-name,
+.theme-realm-gold .theme-name,
+.theme-tianming-god .theme-name {
+  color: #fff8dc;
+}
+
+.theme-realm-gold .current-desc,
+.theme-tianming-god .current-desc,
+.theme-realm-gold .theme-desc,
+.theme-tianming-god .theme-desc {
+  color: rgba(255, 248, 220, 0.68);
+}

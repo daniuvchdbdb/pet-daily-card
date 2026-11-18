@@ -1,0 +1,88 @@
+<view class="page level-page {{themeClass}}" style="{{customThemeStyle}}" wx:if="{{pet}}">
+  <view class="section-card hero-level">
+    <image class="avatar big-avatar" wx:if="{{pet.avatar}}" src="{{pet.avatar}}" mode="aspectFill"></image>
+    <view class="avatar big-avatar avatar-placeholder" wx:else>毛</view>
+
+    <view class="realm-badge" style="background: {{pet.realmInfo.iconColor}};">
+      <image wx:if="{{!iconBroken}}" class="realm-icon-large" src="{{pet.realmInfo.image}}" binderror="onMainIconError"></image>
+      <view wx:else class="realm-emoji-large">{{pet.realmInfo.iconEmoji}}</view>
+    </view>
+
+    <view class="pet-name">{{pet.name}}</view>
+    <view class="realm-name">{{pet.realm}} · Lv.{{pet.level}}</view>
+    <view class="theme-subtitle">{{pet.title}}</view>
+    <view class="realm-desc">{{pet.realmInfo.description}}</view>
+
+    <view class="level-progress">
+      <view class="progress-head">
+        <text>灵气 {{pet.expText}}</text>
+        <text>距离下一境 {{pet.nextNeed}}</text>
+      </view>
+      <view class="exp-bar large">
+        <view class="exp-fill" style="width: {{pet.expProgress}}%;"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section grid">
+    <view class="section-card stat">
+      <view class="num">{{pet.streakDays}}</view>
+      <view class="theme-subtitle">连续修行天数</view>
+    </view>
+    <view class="section-card stat">
+      <view class="num">{{pet.totalRecordDays}}</view>
+      <view class="theme-subtitle">累计记录天数</view>
+    </view>
+  </view>
+
+  <view class="section-card section">
+    <view class="row">
+      <view class="theme-title small">最近灵气记录</view>
+      <view class="theme-subtitle">灵气入体</view>
+    </view>
+    <view class="log-list" wx:if="{{logs.length}}">
+      <view class="log-item" wx:for="{{logs}}" wx:key="_id">
+        <view>
+          <view class="log-title">{{item.title}}</view>
+          <view class="theme-subtitle">{{item.description || item.recordDate}}</view>
+        </view>
+        <view class="exp-plus">+{{item.exp}}</view>
+      </view>
+    </view>
+    <view class="empty small-empty" wx:else>还没有灵气记录，先生成一张日报卡开始修行。</view>
+  </view>
+
+  <view class="section-card section">
+    <view class="theme-title small">已获得徽章</view>
+    <view class="badge-list">
+      <view class="badge {{item.locked ? 'locked' : ''}}" wx:for="{{pet.displayBadges}}" wx:key="id">
+        <view class="badge-icon">{{item.icon}}</view>
+        <view>
+          <view class="badge-name">{{item.name}}</view>
+          <view class="theme-subtitle">{{item.description}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section-card section">
+    <view class="theme-title small">境界图鉴</view>
+    <view class="atlas-grid">
+      <view class="realm-cell {{item.unlocked ? '' : 'locked'}}" wx:for="{{realmAtlas}}" wx:key="iconType">
+        <view class="realm-cell-icon" style="background: {{item.iconColor}};">
+          <image wx:if="{{!item.iconBroken}}" src="{{item.image}}" binderror="onAtlasIconError" data-type="{{item.iconType}}"></image>
+          <text wx:else>{{item.iconEmoji}}</text>
+        </view>
+        <view class="cell-name">{{item.realm}}</view>
+        <view class="theme-subtitle">{{item.levelRange}}级</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="primary-btn section" bindtap="generateGrowthCard">生成灵宠成长卡</view>
+  <view class="safe-note">{{safeNote}}</view>
+</view>
+
+<view class="page" wx:else>
+  <view class="section-card empty section">正在唤醒灵宠修行记录...</view>
+</view>

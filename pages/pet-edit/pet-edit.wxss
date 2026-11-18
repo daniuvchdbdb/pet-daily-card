@@ -1,0 +1,120 @@
+.pet-edit-page {
+  padding-bottom: 150rpx;
+}
+
+.page-header {
+  margin-bottom: 32rpx;
+}
+
+.page-title {
+  color: var(--theme-text, #3a2a30);
+  font-size: 42rpx;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.page-subtitle {
+  margin-top: 10rpx;
+  color: var(--theme-subtle, rgba(58, 42, 48, 0.58));
+  font-size: 24rpx;
+  line-height: 1.45;
+}
+
+.form-card {
+  margin-top: 32rpx;
+  padding: 28rpx;
+}
+
+.avatar-card {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.avatar {
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 36rpx;
+  background: var(--theme-soft, #ffe6f0);
+}
+
+.avatar-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--theme-primary-text, #b65a7a);
+  font-size: 36rpx;
+  font-weight: 900;
+}
+
+.avatar-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.section-title {
+  margin-bottom: 16rpx;
+  color: var(--theme-text, #3a2a30);
+  font-size: 31rpx;
+  font-weight: 900;
+}
+
+.form-item {
+  margin-top: 22rpx;
+}
+
+.form-label {
+  margin-bottom: 12rpx;
+  color: var(--theme-text, #3a2a30);
+  font-size: 26rpx;
+  font-weight: 850;
+}
+
+.form-value {
+  min-height: 84rpx;
+  display: flex;
+  align-items: center;
+  color: var(--theme-text, #3a2a30);
+}
+
+.form-tip {
+  margin-top: 6rpx;
+  color: var(--theme-subtle, rgba(58, 42, 48, 0.58));
+  font-size: 23rpx;
+  line-height: 1.45;
+}
+
+.mini-btn {
+  min-width: 112rpx;
+  min-height: 56rpx;
+  font-size: 24rpx;
+}
+
+.save-btn {
+  margin-top: 32rpx;
+  min-height: 88rpx;
+  font-size: 30rpx;
+  font-weight: 900;
+}
+
+.danger-zone {
+  margin-top: 32rpx;
+  padding: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.danger-title {
+  color: #c85b47;
+  font-size: 28rpx;
+  font-weight: 850;
+}
+
+.delete-btn {
+  min-width: 116rpx;
+  min-height: 56rpx;
+  font-size: 24rpx;
+}

@@ -1,0 +1,56 @@
+.template-page {
+  padding: 28rpx;
+  box-sizing: border-box;
+}
+
+.intro-card {
+  padding: 30rpx;
+  margin-bottom: 24rpx;
+}
+
+.theme-link {
+  margin-top: 24rpx;
+  text-align: center;
+}
+
+.template-list {
+  display: grid;
+  gap: 20rpx;
+}
+
+.template-item {
+  padding: 24rpx;
+}
+
+.preview-strip {
+  height: 100rpx;
+  border-radius: 22rpx;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 18rpx;
+}
+
+.preview-color {
+  flex: 1;
+}
+
+.template-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+  margin-bottom: 10rpx;
+}
+
+.template-name {
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.template-level {
+  padding: 8rpx 18rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 148, 77, 0.14);
+  color: #ff944d;
+  font-size: 22rpx;
+}

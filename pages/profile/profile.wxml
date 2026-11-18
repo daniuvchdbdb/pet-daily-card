@@ -1,0 +1,80 @@
+<view class="page profile-page {{themeClass}} profile-{{themeInfo.layoutType}}" style="{{customThemeStyle}}">
+  <view class="page-header">
+    <view class="page-title">我的</view>
+  </view>
+
+  <view class="section-card user-card theme-deco">
+    <image class="profile-sticker balloon" src="/assets/stickers/heart.png"></image>
+    <image class="profile-sticker paw" src="/assets/stickers/paw-pink.png"></image>
+
+    <view class="user-main">
+      <view class="user-avatar">毛</view>
+      <view class="user-info">
+        <view class="user-name">毛孩日报</view>
+        <view class="plan-pill">当前版本：{{planName}}</view>
+        <view class="theme-pill">当前主题：{{themeName}}</view>
+      </view>
+    </view>
+
+    <view class="stats-card">
+      <view class="stat-item">
+        <view class="stat-icon">🐾</view>
+        <view class="stat-num">{{stats.pets}}</view>
+        <view class="stat-label">宠物数</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-icon">📒</view>
+        <view class="stat-num">{{stats.cards}}</view>
+        <view class="stat-label">日报数</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-icon">🔔</view>
+        <view class="stat-num">{{stats.reminders}}</view>
+        <view class="stat-label">提醒数</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="theme-entry section-card" bindtap="goThemeCenter">
+    <view class="theme-entry-icon">🎨</view>
+    <view class="theme-entry-copy">
+      <view class="section-title">主题皮肤</view>
+      <view class="page-subtitle">全部主题免费开放，当前主题：{{themeName}}</view>
+    </view>
+    <view class="secondary-btn mini-btn">进入</view>
+  </view>
+
+  <view class="section">
+    <view class="section-header">
+      <view class="section-title">免费开放能力</view>
+    </view>
+    <view class="benefit-grid">
+      <view class="section-card benefit-card {{item.key}}" wx:for="{{benefitCards}}" wx:key="key">
+        <view class="benefit-icon">{{item.icon}}</view>
+        <view class="benefit-name">{{item.name}}</view>
+        <view class="benefit-item" wx:for="{{item.items}}" wx:key="*this">✓ {{item}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="menu-card section-card">
+    <view class="menu-item" wx:for="{{menuItems}}" wx:key="key" data-key="{{item.key}}" bindtap="handleMenu">
+      <view class="menu-icon">{{item.icon}}</view>
+      <view class="menu-copy">
+        <view class="menu-title">{{item.title}}</view>
+        <view class="menu-desc">{{item.desc}}</view>
+      </view>
+      <view class="menu-arrow">›</view>
+    </view>
+    <button class="menu-item contact-row" open-type="contact">
+      <view class="menu-icon">💬</view>
+      <view class="menu-copy">
+        <view class="menu-title">联系客服</view>
+        <view class="menu-desc">使用过程中遇到问题可反馈</view>
+      </view>
+      <view class="menu-arrow">›</view>
+    </button>
+  </view>
+
+  <view class="safe-note">毛孩日报是记录爱与陪伴的工具，不提供医疗建议或诊断。如有健康问题，请及时咨询专业兽医。</view>
+</view>
